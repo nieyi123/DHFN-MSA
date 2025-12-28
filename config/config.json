@@ -1,0 +1,151 @@
+{
+  "datasetCommonParams": {
+    "dataset_root_dir": "D:\\pythonproject\\dataset",
+    "mosi": {
+      "aligned": {
+        "featurePath": "D:/pythonproject/dataset/MOSI/Processed/aligned_50.pkl",
+        "feature_dims": [
+          768,
+          5,
+          20
+        ],
+        "train_samples": 1284,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      },
+      "unaligned": {
+        "featurePath": "D:\\pythonproject\\dataset\\MOSI\\Processed\\unaligned_50.pkl",
+        "feature_dims": [
+          768,
+          5,
+          20
+        ],
+        "train_samples": 1284,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      }
+    },
+    "mosei": {
+      "aligned": {
+        "featurePath": "D:\\pythonproject\\dataset\\MOSEI\\Processed\\aligned_50.pkl",
+        "feature_dims": [
+          768,
+          74,
+          35
+        ],
+        "train_samples": 16326,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      },
+      "unaligned": {
+        "featurePath": "D:\\pythonproject\\dataset\\MOSEI\\Processed\\unaligned_50.pkl",
+        "feature_dims": [
+          768,
+          74,
+          35
+        ],
+        "train_samples": 16326,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      }
+    }
+  },
+  "DHFN": {
+    "commonParams": {
+      "need_data_aligned": false,
+      "need_model_aligned": true,
+      "early_stop": 10,
+      "use_bert": true,
+      "use_finetune": true,
+      "attn_mask": true,
+      "update_epochs": 10,
+      "token_len": 8,
+      "token_dim": 128,
+      "l_input_dim": 50,
+      "a_input_dim": 50,
+      "v_input_dim": 50,
+      "l_proj_dst_dim": 128,
+      "a_proj_dst_dim": 128,
+      "v_proj_dst_dim": 128,
+      "l_input_length": 50,
+      "a_input_length": 375,
+      "v_input_length": 500,
+      "proj_input_dim": 128,
+      "proj_depth": 1,
+      "proj_heads": 8,
+      "proj_mlp_dim": 128,
+      "token_length": 8,
+      "l_enc_heads": 8,
+      "l_enc_mlp_dim": 128,
+      "AHL_depth": 3,
+      "ahl_heads": 8,
+      "ahl_dim_head": 16,
+      "fusion_heads": 8,
+      "fusion_mlp_dim": 128,
+      "fusion_layer_depth": 2,
+      "max_len": 768,
+      "use_disentanglement":true,
+      "use_hierarchical_learning": true,
+      "use_shared_enhance": true
+      
+    },
+    "datasetParams": {
+      "mosi": {
+        "attn_dropout_a": 0.2,
+        "attn_dropout_v": 0.0,
+        "relu_dropout": 0.0,
+        "embed_dropout": 0.2,
+        "res_dropout": 0.0,
+        "dst_feature_dim_nheads": [
+          50,
+          10
+        ],
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "nlevels": 2,
+        "conv1d_kernel_size_l": 5,
+        "conv1d_kernel_size_a": 5,
+        "conv1d_kernel_size_v": 5,
+        "ahl_droup": 0.1,
+        "text_dropout": 0.3,
+        "attn_dropout": 0.4,
+        "output_dropout": 0.5,
+        "grad_clip": 0.6,
+        "patience": 5,
+        "weight_decay": 0.005,
+        "transformers": "bert",
+        "pretrained": "D:\\pythonproject\\pretrained\\bert-base-uncased"
+      },
+      "mosei": {
+        "attn_dropout_a": 0.0,
+        "attn_dropout_v": 0.0,
+        "relu_dropout": 0.0,
+        "embed_dropout": 0.0,
+        "res_dropout": 0.0,
+        "dst_feature_dim_nheads": [
+          50,
+          10
+        ],
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "nlevels": 2,
+        "conv1d_kernel_size_l": 3,
+        "conv1d_kernel_size_a": 3,
+        "conv1d_kernel_size_v": 3,
+        "ahl_droup": 0.0,
+        "text_dropout": 0.1,
+        "attn_dropout": 0.5,
+        "output_dropout": 0.5,
+        "grad_clip": 0.6,
+        "patience": 5,
+        "weight_decay": 0.001,
+        "transformers": "bert",
+        "pretrained": "D:\\pythonproject\\pretrained\\bert-base-uncased"
+      }
+    }
+  }
+}
